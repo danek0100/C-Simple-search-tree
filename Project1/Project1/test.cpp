@@ -81,4 +81,11 @@ int main(int argc, char* argv[])
 		tree = add(tree, array[i]);
 
 	in(tree);
+
+	printf("\nInput find: ");
+	int f = geti();
+	if (findone(tree, f))
+		printf("\nYEEEES!\n");
+	else
+		printf("\nOHHH NOOOO!\n");
 }

@@ -1,1 +1,7 @@
-﻿  Project1.vcxproj -> C:\Users\sobda\Documents\GitHub\tree\Project1\Debug\TreeAlg.exe
+﻿  test.cpp
+C:\Users\sobda\Documents\GitHub\tree\Project1\Project1\test.cpp(80,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sobda\Documents\GitHub\tree\Project1\Project1\test.cpp(81,13): warning C4013: add: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\sobda\Documents\GitHub\tree\Project1\Project1\test.cpp(81,29): warning C4047: =: "TREE *" отличается по уровням косвенного обращения от "int"
+C:\Users\sobda\Documents\GitHub\tree\Project1\Project1\test.cpp(83,4): warning C4013: in: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\sobda\Documents\GitHub\tree\Project1\Project1\test.cpp(87,13): warning C4013: findone: нет определения; предполагается "extern" с возвратом типа "int"
+  Project1.vcxproj -> C:\Users\sobda\Documents\GitHub\tree\Project1\Debug\TreeAlg.exe

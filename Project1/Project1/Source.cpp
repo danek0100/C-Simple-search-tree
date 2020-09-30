@@ -54,6 +54,18 @@ void in(TREE* root)
 	}
 }
 
+int findone(TREE* root, int key)
+{
+	if (root->key == key)
+		return 1;
+	else if ((root->left) && (root->key > key))
+		findone(root->left, key);
+	else if ((root->right) && (root->key < key))
+		findone(root->right, key);
+	else
+		return 0;
+}
+
 unsigned int Max_len(unsigned int prv_max, char* str)
 {
 	unsigned int len = strlen(str);
