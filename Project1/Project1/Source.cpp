@@ -66,6 +66,17 @@ int findone(TREE* root, int key)
 		return 0;
 }
 
+
+int findonekey(TREE* root, int key)
+{
+	if (root->key == key)
+		return root-key;
+	else if ((root->left) && (root->key > key))
+		findonekey(root->left, key);
+	else if ((root->right) && (root->key < key))
+		findonekey(root->right, key);
+}
+
 unsigned int Max_len(unsigned int prv_max, char* str)
 {
 	unsigned int len = strlen(str);
@@ -73,4 +84,29 @@ unsigned int Max_len(unsigned int prv_max, char* str)
 		return prv_max;
 	else
 		return len;
+}
+
+void findintervals(TREE* root, int a, int b)
+{
+	if (root)
+	{
+		findintervals(root->left, a, b);
+		if (root->key >= a && root->key <= b)
+			printf("%d ", root->key);
+		findintervals(root->right, a, b);
+	}
+}
+
+
+void findintervalsm(TREE* root, int a, int b)
+{
+	if (root)
+	{
+		if (root->key >= a)
+			findintervalsm(root->left, a, b);
+		if (root->key >= a && root->key <= b)
+			printf("%d ", root->key);
+		if (root->key <= b)
+			findintervalsm(root->right, a, b);
+	}
 }

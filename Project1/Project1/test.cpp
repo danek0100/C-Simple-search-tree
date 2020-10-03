@@ -80,12 +80,70 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < nword; i++)
 		tree = add(tree, array[i]);
 
-	in(tree);
+	
 
-	printf("\nInput find: ");
-	int f = geti();
-	if (findone(tree, f))
-		printf("\nYEEEES!\n");
-	else
-		printf("\nOHHH NOOOO!\n");
+	int kom = 0;
+
+	printf("\nWhat do you want to do?\nAdd new element - 1\nFind one el - 2\nSearch in the interval (stupid) - 3\nWalk away - 4\nPrint the tree - 5\nSearch in the interval (smart) - 6");
+	printf("\n");
+	while (kom != 4)
+	{
+		printf("\nWhat?! ");
+		printf("\n");
+		kom = geti();
+		if (kom == 1)
+		{
+			printf("\nEnter a new element: ");
+			int new = geti();
+			printf("\n");
+			tree = add(tree, new);
+			printf("\nSuccessfully!\n");
+		}
+
+		if (kom == 2)
+		{
+			printf("\nInput one el for find : ");
+			int f = geti();
+			if (findone(tree, f))
+				printf("\nYEEEES! Key = %d FINDDDD!!!!!!!\n", findonekey(tree, f));
+			else
+				printf("\nOHHH NOOOO!\n");
+		}
+
+		if (kom == 3)
+		{
+			printf("\nInput first border for find : ");
+			int f = geti();
+			printf("\nInput second border for find : ");
+			int ff = geti();
+			findintervals(tree, f, ff);
+			printf("\n");
+		}
+
+		if (kom == 4)
+		{
+			free(tree);
+			free(array);
+			free(res);
+			return 0;
+		}
+
+		if (kom == 5)
+		{
+			printf("\nOur tree of life!\n"); 
+			in(tree);
+			printf("\n");
+		}
+
+		if (kom == 6)
+		{
+			printf("\nInput first border for find : ");
+			int f = geti();
+			printf("\nInput second border for find : ");
+			int ff = geti();
+			findintervalsm(tree, f, ff);
+			printf("\n");
+		}
+	}
+	
 }
